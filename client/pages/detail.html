@@ -1,0 +1,14 @@
+<form>
+    <div class="form-group">
+        <div class="col-md-3">
+            <label for="creation_date">Date</label>
+            <input type="text" value="{{ review.creation_date | date : 'short' }}" class="form-control" id="creation_date"></input>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12">
+            <label for="text" style="margin-top:20px">Message</label>
+            <textarea rows="5" class="form-control" id="text">{{ review.text }}</textarea>
+        </div>
+    </div>
+</form>

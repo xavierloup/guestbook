@@ -1,0 +1,25 @@
+<div class="row" ng-show="reviews.length">
+  <div align="right">
+    <a href="#/new">
+      <span class="glyphicon glyphicon-plus" style="margin-right:20px;font-size:30px;cursor:pointer;color:#666666" ng-click="getReviews()"></span>
+    </a>
+    <span class="glyphicon glyphicon-refresh" style="margin-right:20px;font-size:30px;cursor:pointer;color:#666666" ng-click="getReviews()"></span>
+    <label>
+      <span class="glyphicon glyphicon-search" style="margin-right:20px;font-size:30px;cursor:pointer;color:#666666" ng-click="showHideSearch()"></span>
+    </label>
+  </div>
+  <div align="right" ng-hide="isHidden">
+    <input ng-model="searchText" class="input-lg" style="margin-right:20px">
+  </div>
+  <div style="margin-top:10px">
+    <table class="table">
+      </thead>
+      <tr ng-repeat="review in reviews | filter:searchText | orderBy:sortProperty:reverse">
+        <td class="col-md-1 text-center">
+            <a ng-href="#detail/{{ review.doc._id }}">{{ review.doc.creation_date | date : 'dd/MM hh:mm' }}</a>
+        </td>
+        <td class="col-md-11">{{ review.doc.text }}</td>
+      </tr>
+    </table>
+  </div>
+</div>

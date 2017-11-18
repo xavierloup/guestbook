@@ -1,0 +1,20 @@
+{
+  "name": "Guestbook",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "Xavier Loup",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/xavierloup/guestbook.git"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.15.0",
+    "cloudant": "*",
+    "ip": "*"
+  }
+}

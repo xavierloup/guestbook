@@ -15,5 +15,9 @@ podTemplate(label: 'docker',
         sh "docker build -t ${image} ."
       }
     }
+
+    stage('Test') {
+        sh "echo Success"
+    }
   }
 }

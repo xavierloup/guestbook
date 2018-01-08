@@ -10,7 +10,7 @@ podTemplate(label: 'docker',
   def image = "jenkins/jnlp-slave"
   node('docker') {
     stage('Build Docker image') {
-      git 'https://github.com/jenkinsci/docker-jnlp-slave.git'
+      git 'https://github.com/xavierloup/guestbook'
       container('docker') {
         sh "docker build -t ${image} ."
       }
